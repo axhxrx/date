@@ -9,7 +9,7 @@
 export const dateToIS08601WithTimeZoneOffset = (
   date: Date = new Date(),
   timeZoneOffset?: number,
-) =>
+): string =>
 {
   // We can't do better than this in JS, if we don't want to throw an error...
   if (isNaN(date.getTime())) {

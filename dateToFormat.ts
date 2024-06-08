@@ -13,7 +13,7 @@ type DateStringFormat =
 /**
  Returns a string expressing a date (the current date, unless otherwise specified) in a particular format.
  */
-export const dateToFormat = (format: DateStringFormat, date?: Date) =>
+export const dateToFormat = (format: DateStringFormat, date?: Date): string =>
 {
   const fullDateString = dateToIS08601WithTimeZoneOffset(date);
   const [dateString, timeString] = fullDateString.split('T');
