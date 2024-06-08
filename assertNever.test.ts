@@ -1,20 +1,24 @@
 import { describe, it } from 'https://deno.land/std@0.224.0/testing/bdd.ts';
 import { assertEquals, assertThrows } from 'jsr:@std/assert';
-import { assertNever } from "./assertNever.ts";
+import { assertNever } from './assertNever.ts';
 
-describe('assertNever', () => {
-  it('should exist', () => {
+describe('assertNever', () =>
+{
+  it('should exist', () =>
+  {
     assertEquals(typeof assertNever, 'function');
   });
 
-  it('should work', () => {
+  it('should work', () =>
+  {
     let state: 'happy' | 'sad' | 'mad';
     let result = '🤔';
 
     state = 'happy' as unknown as 'happy' | 'sad' | 'mad';
     state = 'mad' as unknown as 'happy' | 'sad' | 'mad';
 
-    switch (state) {
+    switch (state)
+    {
       case 'happy':
         result = '😀';
         break;
@@ -30,8 +34,10 @@ describe('assertNever', () => {
 
     const errFragment = 'Should never happen: mad';
 
-    const invalidNonexhaustiveSwitch = () => {
-      switch (state) {
+    const invalidNonexhaustiveSwitch = () =>
+    {
+      switch (state)
+      {
         case 'happy':
           result = '😀';
           break;

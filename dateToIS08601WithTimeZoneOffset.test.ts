@@ -1,8 +1,7 @@
 import { assertEquals } from 'jsr:@std/assert';
-import { dateToIS08601WithTimeZoneOffset } from "./dateToIS08601WithTimeZoneOffset.ts";
+import { dateToIS08601WithTimeZoneOffset } from './dateToIS08601WithTimeZoneOffset.ts';
 
 const testTimezoneOffset = -540; // JST
-
 
 Deno.test('format a valid date', () =>
 {
@@ -38,4 +37,3 @@ Deno.test('format ignoring milliseconds', () =>
   const result = dateToIS08601WithTimeZoneOffset(date, testTimezoneOffset);
   assertEquals(result, '2023-10-01T21:00:00+09:00');
 });
-

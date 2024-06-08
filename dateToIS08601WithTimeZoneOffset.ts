@@ -12,8 +12,9 @@ export const dateToIS08601WithTimeZoneOffset = (
 ): string =>
 {
   // We can't do better than this in JS, if we don't want to throw an error...
-  if (isNaN(date.getTime())) {
-    return "ERR_INVALID_DATE";
+  if (isNaN(date.getTime()))
+  {
+    return 'ERR_INVALID_DATE_BRO';
   }
 
   // Thanks, Obama! https://stackoverflow.com/questions/17415579/how-to-iso-8601-format-a-date-with-timezone-offset-in-javascript

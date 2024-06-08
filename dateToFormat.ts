@@ -2,20 +2,49 @@ import { assertNever } from './assertNever.ts';
 import { dateToIS08601WithTimeZoneOffset } from './dateToIS08601WithTimeZoneOffset.ts';
 
 /**
- All supported date format strings. This only includes formats we actually use.
+ All supported date format strings.
  */
-type DateStringFormat =
-  | 'YYYY-MM-DD'
-  | 'YYYY-MM-DD HH:mm'
-  | 'YYYY-MM-DD HH:mm:ss'
-  | 'YYYYMMDD'; // because sometimes... you know :-/
+export const allSupportedDateFormats = [
+  'YYYY-MM-DD',
+  'YYYY-MM-DD HH:mm',
+  'YYYY-MM-DD HH:mm:ss',
+  'YYYYMMDD', // because sometimes... you know :-/
+] as const;
+
+/**
+ Type expressing all supported date format strings. This only includes formats we actually use.
+ */
+export type DateStringFormat = typeof allSupportedDateFormats[number];
+
+/**
+ Type guard that checks if a value is a `DateStringFormat`.
+ */
+export const isDateStringFormat = (value: unknown): value is DateStringFormat =>
+{
+  return (
+    typeof value === 'string'
+    && allSupportedDateFormats.includes(value as DateStringFormat)
+  );
+};
 
 /**
  Returns a string expressing a date (the current date, unless otherwise specified) in a particular format.
+
+ In the "JavaScript bogus date object" case, returns `'ERR_INVALID_DATE_BRO'`;
  */
-export const dateToFormat = (format: DateStringFormat, date?: Date): string =>
+export const dateToFormat = (
+  format: DateStringFormat,
+  date?: Date,
+  localTimezoneOffset?: number,
+): string =>
 {
-  const fullDateString = dateToIS08601WithTimeZoneOffset(date);
+  const fullDateString = dateToIS08601WithTimeZoneOffset(date, localTimezoneOffset);
+
+  if (fullDateString.startsWith('ERR'))
+  {
+    return fullDateString;
+  }
+
   const [dateString, timeString] = fullDateString.split('T');
   const [year, month, day] = dateString.split('-');
 
