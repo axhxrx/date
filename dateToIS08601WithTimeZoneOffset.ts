@@ -1,5 +1,5 @@
 /**
- * Render an [ISO 8601])(https://xkcd.com/1179/) style date in the browser's local timezone,
+ * Render an [ISO 8601](https://xkcd.com/1179/) style date in the browser's local timezone,
  * e.g. `2021-03-06T16:45:14+09:00`.
  *
  * This was originally developed to have an unambiguous and machine-parseable (but still fairly human-friendly) date-formatting mechanism for viewing and copying log data.
