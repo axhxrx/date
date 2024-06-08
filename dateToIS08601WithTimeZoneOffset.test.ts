@@ -24,11 +24,11 @@ Deno.test('format date with negative offset', () =>
   assertEquals(result, '2023-10-02T01:00:00+09:00');
 });
 
-Deno.test('return ERR_INVALID_DATE for invalid JS Date object', () =>
+Deno.test('return ERR_INVALID_DATE_BRO for invalid JS Date object', () =>
 {
   const date = new Date('invalid-date-string');
   const result = dateToIS08601WithTimeZoneOffset(date, testTimezoneOffset);
-  assertEquals(result, 'ERR_INVALID_DATE');
+  assertEquals(result, 'ERR_INVALID_DATE_BRO');
 });
 
 Deno.test('format ignoring milliseconds', () =>
