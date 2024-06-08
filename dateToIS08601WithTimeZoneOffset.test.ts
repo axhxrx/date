@@ -37,3 +37,24 @@ Deno.test('format ignoring milliseconds', () =>
   const result = dateToIS08601WithTimeZoneOffset(date, testTimezoneOffset);
   assertEquals(result, '2023-10-01T21:00:00+09:00');
 });
+
+Deno.test('format a valid date with an overridden time zone offset', () =>
+{
+  const date = new Date('2023-10-01T12:00:00Z');
+  const result = dateToIS08601WithTimeZoneOffset(date, 540);
+  assertEquals(result, '2023-10-01T03:00:00-09:00');
+});
+
+Deno.test('format a valid date with an overridden time zone offset into the previous day', () =>
+{
+  const date = new Date('2023-10-01T01:00:00Z');
+  const result = dateToIS08601WithTimeZoneOffset(date, 540);
+  assertEquals(result, '2023-09-30T16:00:00-09:00');
+});
+
+Deno.test('format a valid date with an overridden time zone offset into the next day', () =>
+{
+  const date = new Date('2023-10-01T23:00:00Z');
+  const result = dateToIS08601WithTimeZoneOffset(date, -480);
+  assertEquals(result, '2023-10-02T07:00:00+08:00');
+});

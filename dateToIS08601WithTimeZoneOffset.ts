@@ -19,7 +19,10 @@ export const dateToIS08601WithTimeZoneOffset = (
 
   // Thanks, Obama! https://stackoverflow.com/questions/17415579/how-to-iso-8601-format-a-date-with-timezone-offset-in-javascript
 
-  const offset = timeZoneOffset ?? date.getTimezoneOffset();
+  const actualOffset = date.getTimezoneOffset();
+  const offset = timeZoneOffset ?? actualOffset;
+  const difference = offset - actualOffset;
+  const offsetDate = new Date(date.getTime() - (difference * 60 * 1000));
 
   const tzo = -offset;
   const dif = tzo >= 0 ? '+' : '-';
@@ -30,17 +33,17 @@ export const dateToIS08601WithTimeZoneOffset = (
   };
 
   return (
-    date.getFullYear()
+    offsetDate.getFullYear()
     + '-'
-    + pad(date.getMonth() + 1)
+    + pad(offsetDate.getMonth() + 1)
     + '-'
-    + pad(date.getDate())
+    + pad(offsetDate.getDate())
     + 'T'
-    + pad(date.getHours())
+    + pad(offsetDate.getHours())
     + ':'
-    + pad(date.getMinutes())
+    + pad(offsetDate.getMinutes())
     + ':'
-    + pad(date.getSeconds())
+    + pad(offsetDate.getSeconds())
     + dif
     + pad(tzo / 60)
     + ':'
