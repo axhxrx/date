@@ -30,9 +30,8 @@ jobs:
         run: deno check
 
       # The --allow-dirty is needed because in CI the deno.lock file may be modified
-      # NOTE: For now, using --allow-slow-types because the inferred, as const return types of run() are so cool we want to keep investigating
       - name: JSR check
-        run: deno publish --dry-run --allow-dirty --allow-slow-types
+        run: deno publish --dry-run --allow-dirty
 
   # Only run if we're on main and the test job succeeded:
   publish:
