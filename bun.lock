@@ -6,7 +6,6 @@
       "name": "date",
       "dependencies": {
         "@axhxrx/assert-never": "npm:@jsr/axhxrx__assert-never",
-        "@cross/test": "npm:@jsr/cross__test",
         "@std/assert": "npm:@jsr/std__assert",
       },
       "devDependencies": {
@@ -19,10 +18,6 @@
   },
   "packages": {
     "@axhxrx/assert-never": ["@jsr/axhxrx__assert-never@0.2.1", "https://npm.jsr.io/~/11/@jsr/axhxrx__assert-never/0.2.1.tgz", {}, "sha512-CvZ3tAQ/cbCIH5XLeFZP7od+57EI+cTDAqgh/GWF/8KUgkeQSenD3EMs5jUUeo5x5BLodCAWatauZl/ljRL+vw=="],
-
-    "@cross/test": ["@jsr/cross__test@0.0.14", "https://npm.jsr.io/~/11/@jsr/cross__test/0.0.14.tgz", { "dependencies": { "@jsr/cross__runtime": "~1.0.0" } }, "sha512-VdIIPJW/H3UrLBniEI94pJP2d9asYdgXu8IMKMjUnOP0Xzqvh4KDzsUeR3zHCniR27ljxuRbBRCZbjcOgOO+Nw=="],
-
-    "@jsr/cross__runtime": ["@jsr/cross__runtime@1.0.0", "https://npm.jsr.io/~/11/@jsr/cross__runtime/1.0.0.tgz", {}, "sha512-wUtjVBTk65ae4AKQRnxD5x3h4vVmopdKAYie/uS01Qolii2XQ81bKtRTvJ4kx133GYYgIAgyl3ihQ0OK8LcPmQ=="],
 
     "@jsr/std__internal": ["@jsr/std__internal@1.0.12", "https://npm.jsr.io/~/11/@jsr/std__internal/1.0.12.tgz", {}, "sha512-6xReMW9p+paJgqoFRpOE2nogJFvzPfaLHLIlyADYjKMUcwDyjKZxryIbgcU+gxiTygn8yCjld1HoI0ET4/iZeA=="],
 

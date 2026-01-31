@@ -1,5 +1,5 @@
-import { test } from '@cross/test';
 import { assertEquals } from '@std/assert';
+import { test } from 'node:test';
 
 import { dateToIS08601WithTimeZoneOffset } from './dateToIS08601WithTimeZoneOffset.ts';
 
