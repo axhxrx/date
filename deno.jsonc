@@ -7,4 +7,11 @@
     "@axhxrx/assert-never": "jsr:@axhxrx/assert-never@^0.2.1",
     "@std/assert": "jsr:@std/assert@^1.0.18"
   },
+  "compilerOptions": {
+    "lib": [
+      "esnext",
+      "deno.ns",
+      "deno.window"
+    ]
+  },
 }
