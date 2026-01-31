@@ -1,4 +1,4 @@
-import { assertNever } from './assertNever.ts';
+import { assertNever } from '@axhxrx/assert-never';
 import { dateToIS08601WithTimeZoneOffset } from './dateToIS08601WithTimeZoneOffset.ts';
 
 /**
@@ -72,7 +72,13 @@ export const dateToFormat = (
     default:
       assertNever(format);
       throw new Error(
-        `DateUtils.to(): invariant violation: illegal format: ${format}`,
+        `dateToFormat(): invariant violation: illegal format: ${format}`,
       );
   }
 };
+
+if (import.meta.main)
+{
+  const now = dateToFormat('YYYY-MM-DD HH:mm:ss');
+  console.log(now);
+}

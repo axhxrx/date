@@ -1,10 +1,12 @@
 /**
- * Render an [ISO 8601](https://xkcd.com/1179/) style date in the browser's local timezone,
- * e.g. `2021-03-06T16:45:14+09:00`.
- *
- * This was originally developed to have an unambiguous and machine-parseable (but still fairly human-friendly) date-formatting mechanism for viewing and copying log data.
- *
- * However, it might be generally useful any time you want an ISO 8601 date.
+ Render an [ISO 8601](https://xkcd.com/1179/) style date in the browser's local timezone, e.g. `2021-03-06T16:45:14+09:00`.
+
+ This was originally developed to have an unambiguous and machine-parseable (but still fairly human-friendly) date-formatting mechanism for viewing and copying log data.
+
+ However, it might be generally useful any time you want an ISO 8601 date.
+
+ @param date a `Date` object (defaults to `new Date()`)
+ @param timeZoneOffset Follows `Date.getTimezoneOffset()` convention of "(minutes, inverted sign: positive = west of UTC)" so e.g. `-540` is JST (UTC+09:00) because 9 hours is 540 minutes, and Tokyo is ahead of UTC so you have to go back 540 minutes to get to UTC.
  */
 export const dateToIS08601WithTimeZoneOffset = (
   date: Date = new Date(),
@@ -33,7 +35,7 @@ export const dateToIS08601WithTimeZoneOffset = (
   };
 
   return (
-    offsetDate.getFullYear()
+    String(offsetDate.getFullYear()).padStart(4, '0')
     + '-'
     + pad(offsetDate.getMonth() + 1)
     + '-'

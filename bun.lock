@@ -1,0 +1,41 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "date",
+      "dependencies": {
+        "@axhxrx/assert-never": "npm:@jsr/axhxrx__assert-never",
+        "@cross/test": "npm:@jsr/cross__test",
+        "@std/assert": "npm:@jsr/std__assert",
+      },
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
+  },
+  "packages": {
+    "@axhxrx/assert-never": ["@jsr/axhxrx__assert-never@0.2.1", "https://npm.jsr.io/~/11/@jsr/axhxrx__assert-never/0.2.1.tgz", {}, "sha512-CvZ3tAQ/cbCIH5XLeFZP7od+57EI+cTDAqgh/GWF/8KUgkeQSenD3EMs5jUUeo5x5BLodCAWatauZl/ljRL+vw=="],
+
+    "@cross/test": ["@jsr/cross__test@0.0.14", "https://npm.jsr.io/~/11/@jsr/cross__test/0.0.14.tgz", { "dependencies": { "@jsr/cross__runtime": "~1.0.0" } }, "sha512-VdIIPJW/H3UrLBniEI94pJP2d9asYdgXu8IMKMjUnOP0Xzqvh4KDzsUeR3zHCniR27ljxuRbBRCZbjcOgOO+Nw=="],
+
+    "@jsr/cross__runtime": ["@jsr/cross__runtime@1.0.0", "https://npm.jsr.io/~/11/@jsr/cross__runtime/1.0.0.tgz", {}, "sha512-wUtjVBTk65ae4AKQRnxD5x3h4vVmopdKAYie/uS01Qolii2XQ81bKtRTvJ4kx133GYYgIAgyl3ihQ0OK8LcPmQ=="],
+
+    "@jsr/std__internal": ["@jsr/std__internal@1.0.12", "https://npm.jsr.io/~/11/@jsr/std__internal/1.0.12.tgz", {}, "sha512-6xReMW9p+paJgqoFRpOE2nogJFvzPfaLHLIlyADYjKMUcwDyjKZxryIbgcU+gxiTygn8yCjld1HoI0ET4/iZeA=="],
+
+    "@std/assert": ["@jsr/std__assert@1.0.18", "https://npm.jsr.io/~/11/@jsr/std__assert/1.0.18.tgz", { "dependencies": { "@jsr/std__internal": "^1.0.12" } }, "sha512-oxE6Go+SQJcAc8UVtocaAkKOO39QyyYrb2cwLy7PojoHOrWnCyMe5E3ItmVWjiqOjCceHofwTSmnXxcU8GTSFw=="],
+
+    "@types/bun": ["@types/bun@1.3.8", "", { "dependencies": { "bun-types": "1.3.8" } }, "sha512-3LvWJ2q5GerAXYxO2mffLTqOzEu5qnhEAlh48Vnu8WQfnmSwbgagjGZV6BoHKJztENYEDn6QmVd949W4uESRJA=="],
+
+    "@types/node": ["@types/node@25.1.0", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-t7frlewr6+cbx+9Ohpl0NOTKXZNV9xHRmNOvql47BFJKcEG1CxtxlPEEe+gR9uhVWM4DwhnvTF110mIL4yP9RA=="],
+
+    "bun-types": ["bun-types@1.3.8", "", { "dependencies": { "@types/node": "*" } }, "sha512-fL99nxdOWvV4LqjmC+8Q9kW3M4QTtTR1eePs94v5ctGqU8OeceWrSUaRw3JYb7tU3FkMIAjkueehrHPPPGKi5Q=="],
+
+    "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
+
+    "undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
+  }
+}

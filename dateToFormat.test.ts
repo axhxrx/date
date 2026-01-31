@@ -1,4 +1,6 @@
-import { assertEquals } from 'jsr:@std/assert';
+import { test } from '@cross/test';
+import { assertEquals } from '@std/assert';
+
 import { dateToFormat, isDateStringFormat } from './dateToFormat.ts';
 
 const testTimezoneOffset = -540; // JST
@@ -12,7 +14,7 @@ const formattedDates = {
   YYYYMMDD: '19750101',
 };
 
-Deno.test('format a date', () =>
+test('format a date', () =>
 {
   for (const [format, expected] of Object.entries(formattedDates))
   {
@@ -28,7 +30,7 @@ Deno.test('format a date', () =>
   }
 });
 
-Deno.test('fail to format the JavaScript bogus date object', () =>
+test('fail to format the JavaScript bogus date object', () =>
 {
   const x = new Date('invalid-date-string');
   const result = dateToFormat('YYYY-MM-DD', x, testTimezoneOffset);
