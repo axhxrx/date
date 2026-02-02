@@ -1,6 +1,10 @@
 {
-  "name": "date",
+  "name": "@axhxrx/date",
   "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./mod.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
